@@ -35,10 +35,22 @@ class _BotoesPageState extends State<BotoesPage>{
                   data: buttonTheme,
                   child: buildRaisedButton('Botões de exemplo abaixo.'),
                 ),
-                Text('Flat'),
-                Text('Outline'),
-                Text('Icon'),
-                Text('Action'),
+                ButtonTheme.fromButtonThemeData(
+                  data: buttonTheme,
+                  child: buildFlatButton('Botões de exemplo abaixo.'),
+                ),
+                ButtonTheme.fromButtonThemeData(
+                  data: buttonTheme,
+                  child: buildOutlineButton('Botões de exemplo abaixo.'),
+                ),
+                ButtonTheme.fromButtonThemeData(
+                  data: buttonTheme,
+                  child: buildIconButton('Botões de exemplo abaixo.'),
+                ),
+                ButtonTheme.fromButtonThemeData(
+                  data: buttonTheme,
+                  child: buildActionButton('Botões de exemplo abaixo.'),
+                ),
             ]),
           )
       ),
@@ -76,6 +88,134 @@ class _BotoesPageState extends State<BotoesPage>{
               RaisedButton.icon(
                 icon: Icon(Icons.add, size: 18.0,),
                 label: Text('Raised'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildFlatButton(title){
+    return Align(
+      alignment: Alignment(0.0, 0.2),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(title, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+          ButtonBar(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              FlatButton(
+                child: Text('Flat'),
+              ),
+              FlatButton(
+                child: Text('Flat'),
+                onPressed: (){},
+              ),
+            ],
+          ),
+          ButtonBar(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              FlatButton.icon(
+                icon: Icon(Icons.thumb_up, size: 18.0,),
+                label: Text('Flat'),
+                onPressed: (){
+                },
+              ),
+              FlatButton.icon(
+                icon: Icon(Icons.thumb_down, size: 18.0,),
+                label: Text('Flat'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildOutlineButton(title){
+    return Align(
+      alignment: Alignment(0.0, 0.2),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(title, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+          ButtonBar(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              OutlineButton(
+                child: Text('Outline'),
+              ),
+              OutlineButton(
+                child: Text('Outline'),
+                onPressed: (){},
+              ),
+            ],
+          ),
+          ButtonBar(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              OutlineButton.icon(
+                icon: Icon(Icons.thumb_up, size: 18.0,),
+                label: Text('Outline'),
+                onPressed: (){
+                },
+              ),
+              OutlineButton.icon(
+                icon: Icon(Icons.thumb_down, size: 18.0,),
+                label: Text('Outline'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildIconButton(title){
+    return Align(
+      alignment: Alignment(0.0, 0.2),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(title, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+          ButtonBar(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.thumb_down),
+              ),
+              IconButton(
+                icon: Icon(Icons.timelapse),
+                onPressed: (){
+
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildActionButton(title){
+    return Align(
+      alignment: Alignment(0.0, 0.2),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(title, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+          ButtonBar(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              FloatingActionButton (
+                child: Text('Go'),
+              ),
+              FloatingActionButton(
+                child: Text('Stop'),
+                onPressed: (){},
               ),
             ],
           ),
